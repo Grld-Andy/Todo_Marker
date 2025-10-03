@@ -9,17 +9,14 @@ class IntroPage extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(10.0),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           spacing: 10,
           children: [
             Expanded(
               child: Container(
                 width: double.infinity,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8),
-                  border: Border.all(
-                    width: 1,
-                    color: Colors.black
-                  )
+                  borderRadius: BorderRadius.circular(8)
                 ),
                 child: Image.asset(
                   'assets/images/TIP.png',
@@ -30,12 +27,18 @@ class IntroPage extends StatelessWidget {
             TextButton(
               onPressed: (){},
               style: TextButton.styleFrom(
-                backgroundColor: Colors.yellow[600],
+                backgroundColor: Colors.yellow[800],
+                foregroundColor: Colors.black,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadiusGeometry.circular(5),
                 )
               ),
-              child: Text("HI")
+              child: Text("HI",
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold
+                ),
+              )
             )
           ],
         ),
