@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:task_marker/features/onboarding/presentation/pages/form_1_page.dart';
+import 'package:task_marker/shared/widgets/custom_text_button.dart';
 
 class IntroPage extends StatelessWidget {
   const IntroPage({super.key});
@@ -25,24 +25,7 @@ class IntroPage extends StatelessWidget {
                 ),
               )
             ),
-            TextButton(
-              onPressed: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context) => Form1Page()));
-              },
-              style: TextButton.styleFrom(
-                backgroundColor: Colors.yellow[800],
-                foregroundColor: Colors.black,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadiusGeometry.circular(5),
-                )
-              ),
-              child: Text("HI",
-                style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold
-                ),
-              )
-            )
+            CustomTextButton()
           ],
         ),
       ),
