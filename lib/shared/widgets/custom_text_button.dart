@@ -15,6 +15,7 @@ class CustomTextButton extends StatelessWidget {
         Navigator.push(context, MaterialPageRoute(builder: (context) => Form1Page()));
       },
       style: TextButton.styleFrom(
+        padding: EdgeInsets.all(20),
         backgroundColor: Colors.yellow[800],
         foregroundColor: Colors.black,
         shape: RoundedRectangleBorder(
@@ -22,7 +23,7 @@ class CustomTextButton extends StatelessWidget {
         )
       ),
       child: Text(text,
-        style: TextStyle(
+        style: const TextStyle(
           fontSize: 18,
           fontWeight: FontWeight.bold
         ),
