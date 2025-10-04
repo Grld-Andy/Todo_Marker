@@ -25,7 +25,7 @@ class IntroPage extends StatelessWidget {
                 ),
               )
             ),
-            CustomTextButton()
+            CustomTextButton(text: "HI",)
           ],
         ),
       ),

@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:task_marker/features/onboarding/presentation/pages/form_1_page.dart';
 
 class CustomTextButton extends StatelessWidget {
+  final String text;
+
   const CustomTextButton({
-    super.key,
+    super.key, required this.text
   });
 
   @override
@@ -19,7 +21,7 @@ class CustomTextButton extends StatelessWidget {
           borderRadius: BorderRadiusGeometry.circular(5),
         )
       ),
-      child: Text("HI",
+      child: Text(text,
         style: TextStyle(
           fontSize: 18,
           fontWeight: FontWeight.bold
