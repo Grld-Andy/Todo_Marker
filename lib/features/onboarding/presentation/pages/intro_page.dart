@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task_marker/features/onboarding/presentation/pages/form_1_page.dart';
 
 class IntroPage extends StatelessWidget {
   const IntroPage({super.key});
@@ -25,7 +26,9 @@ class IntroPage extends StatelessWidget {
               )
             ),
             TextButton(
-              onPressed: (){},
+              onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context) => Form1Page()));
+              },
               style: TextButton.styleFrom(
                 backgroundColor: Colors.yellow[800],
                 foregroundColor: Colors.black,
