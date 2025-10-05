@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task_marker/features/onboarding/presentation/pages/form_3_page.dart';
 import 'package:task_marker/shared/widgets/custom_text_button.dart';
 
 class Form2Page extends StatefulWidget {
@@ -26,13 +27,14 @@ class _Form2PageState extends State<Form2Page> {
               Expanded(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   spacing: 5,
                   children: [
                     Text(
-                      "Choose to tags to add now. You can add more and remove some later😊.",
+                      "Choose to tags to add now.\nYou can add more and remove some later😊.",
                       style: TextStyle(
                         fontSize: 16,
-                        fontWeight: FontWeight.bold
+                        fontWeight: FontWeight.bold,
                       ),
                     ),
                     Wrap(
@@ -49,7 +51,9 @@ class _Form2PageState extends State<Form2Page> {
                 )
               ),
               CustomTextButton(
-                text: "DONE", onPressed: (){}
+                text: "DONE", onPressed: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => Form3Page()));
+                }
               )
             ],
           ),
