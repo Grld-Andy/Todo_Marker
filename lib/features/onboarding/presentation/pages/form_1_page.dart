@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task_marker/features/onboarding/presentation/pages/form_2_page.dart';
 import 'package:task_marker/shared/widgets/custom_text_button.dart';
 
 class Form1Page extends StatefulWidget {
@@ -43,7 +44,12 @@ class _Form1PageState extends State<Form1Page> {
                   ],
                 ),
               ),
-              CustomTextButton(text: "NEXT")
+              CustomTextButton(
+                text: "NEXT",
+                onPressed: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => Form2Page()));
+                },
+              )
             ],
           ),
         )

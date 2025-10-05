@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:task_marker/features/onboarding/presentation/pages/form_1_page.dart';
 
 class CustomTextButton extends StatelessWidget {
   final String text;
+  final VoidCallback onPressed;
 
   const CustomTextButton({
-    super.key, required this.text
+    super.key,
+    required this.text,
+    required this.onPressed
   });
 
   @override
   Widget build(BuildContext context) {
     return TextButton(
-      onPressed: (){
-        Navigator.push(context, MaterialPageRoute(builder: (context) => Form1Page()));
-      },
+      onPressed: onPressed,
       style: TextButton.styleFrom(
         padding: EdgeInsets.all(20),
         backgroundColor: Colors.yellow[800],
