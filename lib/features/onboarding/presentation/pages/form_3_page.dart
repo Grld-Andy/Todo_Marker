@@ -5,6 +5,14 @@ class Form3Page extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      body: Column(
+        children: [
+          Text(
+            "Would you like to track tasks by difficulty"
+          )
+        ],
+      )
+    );
   }
 }

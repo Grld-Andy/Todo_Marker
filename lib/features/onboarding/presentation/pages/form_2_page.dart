@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:task_marker/features/onboarding/presentation/pages/form_3_page.dart';
 import 'package:task_marker/shared/widgets/custom_text_button.dart';
+import 'package:task_marker/shared/widgets/h1_text.dart';
 
 class Form2Page extends StatefulWidget {
   const Form2Page({super.key});
@@ -30,13 +31,7 @@ class _Form2PageState extends State<Form2Page> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   spacing: 5,
                   children: [
-                    Text(
-                      "Choose to tags to add now.\nYou can add more and remove some later😊.",
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
+                    h1_text(text: "Choose to tags to add now.\nYou can add more and remove some later😊."),
                     Wrap(
                       spacing: 5.0,
                       runSpacing: 5.0,
