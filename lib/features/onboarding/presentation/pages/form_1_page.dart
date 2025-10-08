@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:task_marker/features/onboarding/presentation/pages/form_2_page.dart';
 import 'package:task_marker/shared/widgets/custom_text_button.dart';
+import 'package:task_marker/shared/widgets/h1_text.dart';
 
 class Form1Page extends StatefulWidget {
   const Form1Page({super.key});
@@ -28,12 +29,7 @@ class _Form1PageState extends State<Form1Page> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   spacing: 10,
                   children: [
-                    Text(
-                      "Please enter your username",
-                      style: TextStyle(
-                        fontSize: 16,
-                      ),
-                    ),
+                    H1Text(text:"Please enter your username"),
                     TextField(
                       controller: _textcontroller,
                       decoration: InputDecoration(

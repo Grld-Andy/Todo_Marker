@@ -31,7 +31,7 @@ class _Form2PageState extends State<Form2Page> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   spacing: 5,
                   children: [
-                    h1_text(text: "Choose to tags to add now.\nYou can add more and remove some later😊."),
+                    H1Text(text: "Choose to tags to add now.\nYou can add more and remove some later😊."),
                     Wrap(
                       spacing: 5.0,
                       runSpacing: 5.0,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task_marker/shared/widgets/h1_text.dart';
 
 class Form3Page extends StatelessWidget {
   const Form3Page({super.key});
@@ -8,9 +9,7 @@ class Form3Page extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: [
-          Text(
-            "Would you like to track tasks by difficulty"
-          )
+          H1Text(text: "Would you like to track tasks by difficulty")
         ],
       )
     );
