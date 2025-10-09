@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:task_marker/features/home/presentation/pages/home_page.dart';
+import 'package:task_marker/features/onboarding/presentation/pages/form_1_page.dart';
+import 'package:task_marker/features/onboarding/presentation/pages/form_2_page.dart';
+import 'package:task_marker/features/onboarding/presentation/pages/form_3_page.dart';
 import 'package:task_marker/features/onboarding/presentation/pages/intro_page.dart';
 
 void main() {
@@ -33,7 +37,14 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: const IntroPage(),
+      initialRoute: '/intro',
+      routes: {
+        '/intro': (context) => IntroPage(),
+        '/form1': (context) => Form1Page(),
+        '/form2': (context) => Form2Page(),
+        '/form3': (context) => Form3Page(),
+        '/home': (context) => HomePage(),
+      },
     );
   }
 }
