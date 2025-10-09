@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:task_marker/features/onboarding/presentation/pages/form_3_page.dart';
 import 'package:task_marker/shared/widgets/custom_text_button.dart';
 import 'package:task_marker/shared/widgets/h1_text.dart';
 
@@ -47,7 +46,7 @@ class _Form2PageState extends State<Form2Page> {
               ),
               CustomTextButton(
                 text: "DONE", onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => Form3Page()));
+                  Navigator.pushNamed(context, "/form3");
                 }
               )
             ],

@@ -16,7 +16,9 @@ class Form3Page extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               IconButton(
-                onPressed: (){},
+                onPressed: (){
+                  Navigator.pushNamedAndRemoveUntil(context, '/home', (route) => false);
+                },
                 icon: Icon(Icons.check),
                 style: IconButton.styleFrom(
                   backgroundColor: Colors.green[400],
@@ -29,6 +31,7 @@ class Form3Page extends StatelessWidget {
               ),
               IconButton(
                 onPressed: (){
+                  Navigator.pushNamedAndRemoveUntil(context, '/home', (route) => false);
                 },
                 icon: Icon(Icons.close),
                 style: IconButton.styleFrom(
