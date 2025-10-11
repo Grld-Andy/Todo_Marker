@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:task_marker/features/home/presentation/pages/home_page.dart';
+import 'package:task_marker/features/home/presentation/pages/main_screen.dart';
 import 'package:task_marker/features/onboarding/presentation/pages/form_1_page.dart';
 import 'package:task_marker/features/onboarding/presentation/pages/form_2_page.dart';
 import 'package:task_marker/features/onboarding/presentation/pages/form_3_page.dart';
@@ -43,7 +43,7 @@ class MyApp extends StatelessWidget {
         '/form1': (context) => Form1Page(),
         '/form2': (context) => Form2Page(),
         '/form3': (context) => Form3Page(),
-        '/home': (context) => HomePage(),
+        '/home': (context) => MainScreen(),
       },
     );
   }
