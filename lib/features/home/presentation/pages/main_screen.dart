@@ -53,6 +53,10 @@ class _MainScreenState extends State<MainScreen> {
           ),
         ]
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: (){},
+        child: Icon(Icons.add)
+      ),
     );
   }
 }
