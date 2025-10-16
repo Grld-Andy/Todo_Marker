@@ -16,4 +16,13 @@ class Task {
     required this.deadline,
     required this.tag,
   });
+
+  Task.empty():
+    id = 0,
+    title = '',
+    description = '',
+    difficulty = '',
+    startTime = DateTime.now(),
+    deadline = DateTime.now(),
+    tag = '';
 }
