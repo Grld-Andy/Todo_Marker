@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:task_marker/features/home/Model/Task.dart';
 import 'package:task_marker/features/home/data/greetings.dart';
+import 'package:task_marker/features/home/presentation/widgets/profile_section.dart';
 import 'package:task_marker/features/home/presentation/widgets/search_section.dart';
 import 'package:task_marker/shared/widgets/h1_text.dart';
 
@@ -14,7 +15,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   List<Task> tasks = [];
   final String _greetings = getGreeting();
-  final TextEditingController _controller = new TextEditingController();
+  final TextEditingController _controller = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -23,25 +24,11 @@ class _HomePageState extends State<HomePage> {
       child: Column(
         spacing: 20.0,
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  H1Text(text: "$_greetings, username"),
-                  Text("You have 4 tasks today")
-                ],
-              ),
-              CircleAvatar(
-                radius: 20,
-                backgroundImage: AssetImage('assets/images/TIP.png'),
-              )
-            ],
-          ),
+          ProfileSection(greetings: _greetings),
           SearchSection(controller: _controller)
         ],
       ),
     );
   }
 }
+
