@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:task_marker/features/home/Model/Task.dart';
+import 'package:task_marker/features/home/model/task.dart';
 import 'package:task_marker/features/home/data/greetings.dart';
 import 'package:task_marker/features/home/presentation/widgets/profile_section.dart';
 import 'package:task_marker/features/home/presentation/widgets/search_section.dart';
+import 'package:task_marker/features/home/presentation/widgets/task_list.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -31,4 +32,3 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
-
