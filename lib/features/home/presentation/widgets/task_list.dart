@@ -35,6 +35,7 @@ class TasksList extends StatelessWidget {
                     Expanded(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
+                        spacing: 2,
                         children: [
                           Text(
                             task.title
@@ -46,7 +47,22 @@ class TasksList extends StatelessWidget {
                             style: TextStyle(
                               color: Colors.grey[700]
                             ),
-                          )
+                          ),
+                          Container(
+                            padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 1),
+                            decoration: BoxDecoration(
+                              border: Border.all(width: 1, color: const Color.fromARGB(128, 243, 159, 33)),
+                              borderRadius: BorderRadius.circular(50),
+                              color: const Color.fromARGB(26, 243, 100, 33),
+                            ),
+                            child: Text(
+                              task.tag,
+                              style: TextStyle(
+                                fontSize: 12,
+                                fontWeight: FontWeight.w400
+                              ),
+                            ),
+                          ),
                         ],
                       )
                     ),
