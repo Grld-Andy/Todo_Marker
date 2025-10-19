@@ -1,4 +1,4 @@
-import 'package:task_marker/features/home/Model/Task.dart';
+import 'package:task_marker/features/home/model/task.dart';
 
 final List<Task> mockTasks = [
   Task(

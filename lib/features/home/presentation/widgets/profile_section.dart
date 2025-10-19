@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:task_marker/features/home/model/task.dart';
 import 'package:task_marker/shared/widgets/h1_text.dart';
 
 class ProfileSection extends StatelessWidget {
   const ProfileSection({
     super.key,
-    required String greetings,
+    required greetings,
+    required this.tasks,
   }) : _greetings = greetings;
 
   final String _greetings;
+  final List<Task> tasks;
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +21,7 @@ class ProfileSection extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             H1Text(text: "$_greetings, username"),
-            Text("You have 4 tasks today")
+            Text("You have ${tasks.length} tasks today")
           ],
         ),
         CircleAvatar(

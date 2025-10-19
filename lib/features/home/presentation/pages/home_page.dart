@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task_marker/features/home/data/mock_tasks.dart';
 import 'package:task_marker/features/home/model/task.dart';
 import 'package:task_marker/features/home/data/greetings.dart';
 import 'package:task_marker/features/home/presentation/widgets/empty_tasks_list.dart';
@@ -14,7 +15,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  List<Task> tasks = [];
+  List<Task> tasks = mockTasks;
   final String _greetings = getGreeting();
   final TextEditingController _controller = TextEditingController();
 
@@ -25,7 +26,7 @@ class _HomePageState extends State<HomePage> {
       child: Column(
         spacing: 20.0,
         children: [
-          ProfileSection(greetings: _greetings),
+          ProfileSection(greetings: _greetings, tasks: tasks,),
           SearchSection(controller: _controller),
           tasks.isNotEmpty ? TasksList(tasks: tasks) : EmptyTasksList()
         ],

@@ -22,8 +22,14 @@ class TasksList extends StatelessWidget {
             return ListTile(
               leading: FlutterLogo(size: 50),
               title: Text(tasks[index].title),
-              subtitle: Text(tasks[index].description),
+              subtitle: Text(
+                tasks[index].description,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+              ),
               trailing: Row(
+                mainAxisSize: MainAxisSize.min,
+                spacing: 5,
                 children: [
                   IconButton(
                     onPressed: (){},
@@ -55,4 +61,3 @@ class TasksList extends StatelessWidget {
     );
   }
 }
-
