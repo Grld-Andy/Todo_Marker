@@ -18,23 +18,27 @@ class SearchSection extends StatelessWidget {
             controller: _controller,
             decoration: InputDecoration(
               hintText: "Search by title or description",
-              border: OutlineInputBorder()
+              prefixIcon: Icon(Icons.search, color: Colors.deepOrange,),
+              filled: true,
+              fillColor: Colors.amber[100],
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(12),
+                borderSide: BorderSide.none
+              )
             ),
           ),
         ),
-        Container(
-          // padding: EdgeInsets.all(2),
-          width: 50,
-          height: 48,
-          decoration: BoxDecoration(
-            border: Border.all(width: 1),
-            borderRadius: BorderRadius.circular(5),
-          ),
+        Material(
+          color: Colors.amber[100],
+          borderRadius: BorderRadius.circular(12),
           child: InkWell(
-            borderRadius: BorderRadius.circular(5), // ripple matches rectangle
+            borderRadius: BorderRadius.circular(12), // ripple matches rectangle
             onTap: () {},
-            child: Center(
-              child: Icon(Icons.filter_alt),
+            child: Container(
+              width: 48,
+              height: 48,
+              alignment: Alignment.center,
+              child: Icon(Icons.filter_alt, color: Colors.deepOrange,),
             ),
           )
         )
