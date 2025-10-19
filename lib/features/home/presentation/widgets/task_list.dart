@@ -13,15 +13,15 @@ class TasksList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      child: Container(
-        decoration: BoxDecoration(
-          border: Border.all(width: 2)
-        ),
-        child: ListView.builder(
-          itemCount: tasks.length,
-          itemBuilder: (context, index) {
-            final task = tasks[index];
-            return Card(
+      child: ListView.builder(
+        itemCount: tasks.length,
+        itemBuilder: (context, index) {
+          final task = tasks[index];
+          return Padding(
+            padding: EdgeInsets.only(
+              bottom: index == tasks.length - 1 ? 50.0 : 0, // only last card gets extra space
+            ),
+            child: Card(
               elevation: 2,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(12)
@@ -78,9 +78,9 @@ class TasksList extends StatelessWidget {
                   ],
                 ),
               ),
-            );
-          }
-        ),
+            ),
+          );
+        }
       ),
     );
   }
