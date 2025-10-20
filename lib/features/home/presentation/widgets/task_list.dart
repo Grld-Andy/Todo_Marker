@@ -31,7 +31,15 @@ class TasksList extends StatelessWidget {
                 child: Row(
                   spacing: 5,
                   children: [
-                    FlutterLogo(size: 50),
+                    // FlutterLogo(size: 50),
+                    CircleAvatar(
+                      radius: 20,
+                      child: Icon(
+                        Icons.person,
+                        color: Colors.deepOrange,
+                        size: 30,
+                      ),
+                    ),
                     Expanded(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -67,7 +75,7 @@ class TasksList extends StatelessWidget {
                       )
                     ),
                     Row(
-                      spacing: 5,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         TaskButton(
                           icon: Icons.check,
