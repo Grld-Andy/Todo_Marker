@@ -19,6 +19,12 @@ class _HomePageState extends State<HomePage> {
   final String _greetings = getGreeting();
   final TextEditingController _controller = TextEditingController();
 
+  void addTask(task) {
+    setState(() {
+      tasks.add(task);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Padding(

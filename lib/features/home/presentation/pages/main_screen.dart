@@ -41,10 +41,12 @@ class _MainScreenState extends State<MainScreen> {
           ),
         ]
       ),
-      floatingActionButton: FloatingActionButton(
+      floatingActionButton: _selectedIndex == 0 
+      ? FloatingActionButton(
         onPressed: (){},
         child: Icon(Icons.add)
-      ),
+      ) : 
+      null,
     );
   }
 }
