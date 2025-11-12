@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:task_marker/features/home/presentation/pages/home_page.dart';
 import 'package:task_marker/features/home/presentation/pages/settings_page.dart';
+import 'package:task_marker/features/home/presentation/widgets/forms/create_task_form.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -43,7 +44,24 @@ class _MainScreenState extends State<MainScreen> {
       ),
       floatingActionButton: _selectedIndex == 0 
       ? FloatingActionButton(
-        onPressed: (){},
+        onPressed: (){
+          showModalBottomSheet(
+            context: context,
+            isScrollControlled: true,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.vertical(top: Radius.circular(20))
+            ),
+            builder: (context) => Padding(
+              padding: EdgeInsets.only(
+                bottom: MediaQuery.of(context).viewInsets.bottom,
+                left: 16,
+                right: 16,
+                top: 20
+              ),
+              child: const CreateTaskForm(),
+            )
+          );
+        },
         child: Icon(Icons.add)
       ) : 
       null,

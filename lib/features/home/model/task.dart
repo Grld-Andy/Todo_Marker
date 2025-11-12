@@ -1,3 +1,5 @@
+import 'package:task_marker/features/home/data/mock_tasks.dart';
+
 class Task {
   final int id;
   final String title;
@@ -25,4 +27,6 @@ class Task {
     startTime = DateTime.now(),
     deadline = DateTime.now(),
     tag = '';
+  
+  static List<Task> tasks = mockTasks;
 }

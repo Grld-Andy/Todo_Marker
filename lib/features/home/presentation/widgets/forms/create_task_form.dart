@@ -1,4 +1,6 @@
+import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
+import 'package:task_marker/shared/widgets/h1_text.dart';
 
 class CreateTaskForm extends StatefulWidget {
   const CreateTaskForm({super.key});
@@ -8,8 +10,6 @@ class CreateTaskForm extends StatefulWidget {
 }
 
 class _CreateTaskFormState extends State<CreateTaskForm> {
-  @override
-
   final formKey = GlobalKey<FormState>();
   final titleController = TextEditingController();
   final descriptionController = TextEditingController();
@@ -21,15 +21,19 @@ class _CreateTaskFormState extends State<CreateTaskForm> {
   final difficulties = ["Easy", "Medium", "Hard"];
   final tags = ["Work", "Home", "School", "Entertainment"];
 
+  @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Form(
         key: formKey,
         child: Column(
-          // crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          spacing: 10,
           children: [
-            const Text(
-              "Add New Task"
+            const Center(
+              child: H1Text(
+                text: "Add New Task"
+              ),
             ),
             TextFormField(
               controller: titleController,
@@ -47,34 +51,77 @@ class _CreateTaskFormState extends State<CreateTaskForm> {
               ),
               maxLines: 3,
             ),
-            DropdownButtonFormField(
-              items: difficulties
-                .map((d) => DropdownMenuItem(
+            DropdownButtonFormField2<String>(
+              decoration: InputDecoration(
+                labelText: 'Difficulty',
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 14),
+              ),
+              isExpanded: true,
+              items: difficulties.map((d) {
+                Color color;
+                switch (d) {
+                  case 'Easy':
+                    color = Colors.green;
+                    break;
+                  case 'Medium':
+                    color = Colors.orange;
+                    break;
+                  case 'Hard':
+                    color = Colors.red;
+                    break;
+                  default:
+                    color = Colors.grey;
+                }
+                return DropdownMenuItem<String>(
                   value: d,
-                  child: Text(d),
-                ))
-                .toList(),
-              onChanged: (v) => setState(() {
-                selectedDifficulty = v!;
-              })
+                  child: Row(
+                    children: [
+                      Container(
+                        width: 10,
+                        height: 10,
+                        decoration: BoxDecoration(color: color, shape: BoxShape.circle),
+                      ),
+                      const SizedBox(width: 8),
+                      Text(d, style: const TextStyle(fontWeight: FontWeight.w500)),
+                    ],
+                  ),
+                );
+              }).toList(),
+              onChanged: (value) {
+                setState(() {
+                  selectedDifficulty = value!;
+                });
+              },
+              validator: (value) => value == null ? 'Select difficulty' : null,
             ),
-            DropdownButtonFormField(
-              items: tags
-                .map((t) => DropdownMenuItem(
+            DropdownButtonFormField2(
+              decoration: InputDecoration(
+                labelText: "Tag",
+                border: OutlineInputBorder()
+              ),
+              isExpanded: true,
+              items: tags.map((t){
+                return DropdownMenuItem(
                   value: t,
                   child: Text(t)
-                )
-                ).toList(),
-              onChanged: (v) => setState(() {
-                tagController.text = v!;
-              })
+                );
+              }).toList(),
+              onChanged: (v){
+                setState(() {
+                  tagController.text = v!;
+                });
+              },
             ),
             ElevatedButton(
               onPressed: (){},
               style: ElevatedButton.styleFrom(
               ),
               child: const Text("Add Task")
-            )
+            ),
+            SizedBox(height: 5,)
           ],
         )
       ),

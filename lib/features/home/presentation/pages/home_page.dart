@@ -15,13 +15,12 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  List<Task> tasks = mockTasks;
   final String _greetings = getGreeting();
   final TextEditingController _controller = TextEditingController();
 
   void addTask(task) {
     setState(() {
-      tasks.add(task);
+      Task.tasks.add(task);
     });
   }
 
@@ -32,9 +31,9 @@ class _HomePageState extends State<HomePage> {
       child: Column(
         spacing: 20.0,
         children: [
-          ProfileSection(greetings: _greetings, tasks: tasks,),
+          ProfileSection(greetings: _greetings, tasks: Task.tasks,),
           SearchSection(controller: _controller),
-          tasks.isNotEmpty ? TasksList(tasks: tasks) : EmptyTasksList()
+          Task.tasks.isNotEmpty ? TasksList(tasks: Task.tasks) : EmptyTasksList()
         ],
       ),
     );
